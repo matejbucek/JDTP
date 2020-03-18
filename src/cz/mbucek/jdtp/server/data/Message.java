@@ -3,6 +3,10 @@ package cz.mbucek.jdtp.server.data;
 import java.io.Serializable;
 
 public class Message implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2842210876928487745L;
 	protected boolean open = false;
 	protected String hash;
 	protected byte[] bytes;
