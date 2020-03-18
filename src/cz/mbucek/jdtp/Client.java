@@ -12,6 +12,11 @@ import cz.mbucek.jdtp.client.ClientEndPoint;
 import cz.mbucek.jdtp.server.data.Message;
 import cz.mbucek.jdtp.utils.Utils;
 
+
+/*	<h1>Client class</h1>
+ * 
+ * @author Matěj Bucek
+ * */
 public class Client {
 	
 	protected Socket client;

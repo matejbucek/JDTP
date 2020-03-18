@@ -9,7 +9,7 @@ import cz.mbucek.jdtp.server.EndPoint;
 import cz.mbucek.jdtp.server.ServerClient;
 import cz.mbucek.jdtp.server.ServerEndPoint;
 
-/*
+/*	<h1>Server class</h1>
  * 
  * @author Matěj Bucek
  * */
@@ -32,6 +32,10 @@ public class Server {
 		this.port = port;
 	}
 	
+	/*
+	 * <p>Starts server</p>
+	 * */
+	
 	public void start() throws IOException {
 		this.createServer();
 		this.run = true;
@@ -39,26 +43,60 @@ public class Server {
 		handler.start();
 	}
 	
+	/*
+	 * <p>Close server</p>
+	 * */
+	
 	public void close() throws IOException {
 		this.run = false;
 		this.server.close();
 	}
 	
+	/*
+	 * <p>Creates ServerSocket</p>
+	 * */
+	
 	private void createServer() throws IOException {
 		this.server = new ServerSocket(this.port);
 	}
+	
+	/*
+	 * <p>Should server run</p>
+	 * 
+	 * @return boolean which declares if server should run or not
+	 * */
 	
 	public boolean shouldRun() {
 		return this.run;
 	}
 	
+	/*
+	 * <p>Gives server socket</p>
+	 * 
+	 * @return ServerSocket from Server class
+	 * */
+	
 	public ServerSocket getServer() {
 		return this.server;
 	}
 	
+	/*
+	 * <p>Adds ServerClient to clientlist. Used by handler</p>
+	 * 
+	 * @param ServerClient
+	 * */
+	
 	public void addClient(ServerClient client) {
 		this.clients.add(client);
 	}
+	
+	/*
+	 * <p>Gives back ServerEndPoint class</p>
+	 * 
+	 * @param String endpoint name
+	 * 
+	 * @return ServerEndPoint of given name
+	 * */
 	
 	public ServerEndPoint getEndPoint(String endpoint) {
 		for (int i = 0; i < this.endpoints.size(); i++) {
@@ -69,9 +107,21 @@ public class Server {
 		return null;
 	}
 	
+	/*
+	 * <p>Adds endpoint to server</p>
+	 * 
+	 * @param ServerEndPoint you want to add
+	 * */
+	
 	public void addEndPoint(ServerEndPoint endpoint) {
 		this.endpoints.add(endpoint);
 	}
+	
+	/*
+	 * <p>Set Servers endpoints list to your list</p>
+	 * 
+	 * @param ArrayList<ServerEndPoint>
+	 * */
 	
 	public void setEndPoints(ArrayList<ServerEndPoint> endpoints) {
 		this.endpoints = endpoints;
