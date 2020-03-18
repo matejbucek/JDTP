@@ -30,6 +30,6 @@ After this you can sand any Object you want throught this connection.
 
 3. Connect.
 
-*I will add link to examples as soon as I can.*
+*I will add link to examples as soon as passible.*
 
 *Look to wiki for more info.*
