@@ -45,6 +45,7 @@ public class ClientDataReader extends Thread{
 				
 				if(message.isClose()) {
 					this.caller.callClose();
+					this.client.close();
 				}else if(message.isOpen()) {
 					if(message.getHash().equalsIgnoreCase(Utils.isCorrectMess(this.client.getHash()))) {
 						this.client.setOpen();
