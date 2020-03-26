@@ -21,6 +21,7 @@ public class Server {
 	protected ArrayList<ServerEndPoint> endpoints = new ArrayList<ServerEndPoint>();
 	protected Handler handler;
 	protected boolean run;
+	protected boolean secure = false;
 	protected int port;
 	
 	/*
@@ -91,6 +92,16 @@ public class Server {
 	}
 	
 	/*
+	 * <p>Removes ServerClient from clientlist. Used by handler</p>
+	 * 
+	 * @param ServerClient
+	 * */
+	
+	public void removeClient(ServerClient client) {
+		this.clients.remove(client);
+	}
+	
+	/*
 	 * <p>Gives back ServerEndPoint class</p>
 	 * 
 	 * @param String endpoint name
@@ -125,5 +136,9 @@ public class Server {
 	
 	public void setEndPoints(ArrayList<ServerEndPoint> endpoints) {
 		this.endpoints = endpoints;
+	}
+	
+	public boolean isSecure() {
+		return this.secure;
 	}
 }

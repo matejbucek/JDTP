@@ -44,6 +44,7 @@ public class DataReader extends Thread{
 				if(message.isClose()) {
 					this.caller.callClose();
 					this.client.getClient().close();
+					this.server.removeClient(this.client);
 				}else if(message.isOpen()){
 					Message response = new Message(true, Base64.getEncoder().encodeToString(MessageDigest.getInstance("SHA-1").digest((message.getHash() + "2V83AFA5-VO24-47DA-9DCA-NU6L05FT0D31").getBytes("UTF-8"))));
 					this.client.open(response);

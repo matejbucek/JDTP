@@ -57,6 +57,7 @@ public class ServerClient {
 	
 	public void forceClose() throws IOException {
 		this.client.close();
+		this.server.removeClient(this);
 	}
 	
 	public Socket getClient() {
