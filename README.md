@@ -12,6 +12,19 @@ Server starts and listen on given port. When client first connect, it immediatel
 
 After this you can sand any Object you want throught this connection.
 
+## How do add this library to my project?
+
+You can use Maven:
+```
+<dependency>
+  <groupId>cz.mbucek</groupId>
+  <artifactId>JDTP</artifactId>
+  <version>0.2-snapshot</version>
+</dependency>
+```
+
+Or you can use JAR file in Releases and add that to build bath of your project.
+
 ## First steps
 
 ### Server
