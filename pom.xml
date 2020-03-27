@@ -15,4 +15,12 @@
       </plugin>
     </plugins>
   </build>
+  
+  <distributionManagement>
+   <repository>
+     <id>github</id>
+     <name>JDTP</name>
+     <url>https://maven.pkg.github.com/matejbucek/JDTP</url>
+   </repository>
+</distributionManagement>
 </project>
