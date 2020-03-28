@@ -15,6 +15,17 @@ After this you can sand any Object you want throught this connection.
 ## How do add this library to my project?
 
 You can use Maven:
+
+Add this into your repositories.
+```
+<repository>
+  <id>github</id>
+  <name>JDTP</name>
+  <url>https://maven.pkg.github.com/matejbucek/JDTP</url>
+</repository>
+```
+And this into your pom.xml file.
+
 ```
 <dependency>
   <groupId>cz.mbucek</groupId>
