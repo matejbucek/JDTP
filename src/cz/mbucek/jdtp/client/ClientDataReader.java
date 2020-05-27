@@ -6,6 +6,7 @@ import java.io.ObjectOutputStream;
 import java.security.NoSuchAlgorithmException;
 
 import cz.mbucek.jdtp.Client;
+import cz.mbucek.jdtp.server.LookAheadObjectInputStream;
 import cz.mbucek.jdtp.server.data.Message;
 import cz.mbucek.jdtp.utils.Utils;
 
@@ -29,7 +30,7 @@ public class ClientDataReader extends Thread{
 				e2.printStackTrace();
 			}
 			try {
-				oin = new ObjectInputStream(this.client.getClient().getInputStream());
+				oin = new LookAheadObjectInputStream(this.client.getClient().getInputStream());
 				this.client.setObjectInputStream(oin);
 			} catch (IOException e1) {
 				e1.printStackTrace();

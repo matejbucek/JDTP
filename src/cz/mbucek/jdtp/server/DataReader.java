@@ -27,7 +27,7 @@ public class DataReader extends Thread{
 		ObjectOutputStream oos = null;
 		
 		try {
-			oin = new ObjectInputStream(this.client.getClient().getInputStream());
+			oin = new LookAheadObjectInputStream(this.client.getClient().getInputStream());
 			oos = new ObjectOutputStream(this.client.getClient().getOutputStream());
 		} catch (IOException e) {
 			e.printStackTrace();
